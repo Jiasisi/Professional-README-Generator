@@ -18,13 +18,15 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return '## License'
+    return `## License
+    This project uses ${license}.
+    `;
   } return '';
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.project-title}
+  return `# ${data.title}
 
 ${renderLicenseBadge(data.license)}
 
@@ -40,18 +42,18 @@ ${data.description}
 6. [Questions](#Questions)
 
 ## Installation
-${data.installation-instructions}
+${data.installation}
 
 ## Usage
-${data.usage-information}
+${data.usage}
 
 ${renderLicenseSection(data.license)}
 
 ## Contributing
-${data.contribution-guidelines}
+${data.contribution}
 
 ## Tests
-${data.test-instructions}
+${data.test}
 
 ## Questions
 This is the link to my Github profile: https://github.com/${data.username}
